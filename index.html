@@ -8,7 +8,8 @@
   <meta property="og:title" content="nexgroov — your next best play" />
   <meta property="og:description" content="Make your next move obvious. Join the early list." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'%3E%3Crect width='100%25' height='100%25' fill='%230a0a0a'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif' font-size='96' letter-spacing='2'%3Enex%3Ctspan fill='%234ade80'%3Ex%3C/tspan%3Egroov%3C/text%3E%3C/svg%3E" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; form-action https://formsubmit.co; frame-src https://formsubmit.co; frame-ancestors 'none'; base-uri 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0a0a'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='28' font-family='system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif'%3En%3Ctspan fill='%234ade80'%3Ex%3C/tspan%3Eg%3C/text%3E%3C/svg%3E" />
   <style>
     :root { --bg: #0a0a0a; --fg: #f5f5f5; --muted:#a3a3a3; --card:#111; --line:#1f1f1f; --accent:#4ade80; }
@@ -47,8 +48,12 @@
       <h1 id="brand" class="logo">ne<span class="x">x</span>groov</h1>
       <p class="tag">your next best play</p>
 
-      <!-- Email capture: replace FORM_ID below (Formspree free) -->
-      <form class="cta" action="https://formspree.io/f/FORM_ID" method="POST">
+      <!-- Email capture: sends to your inbox via FormSubmit -->
+      <iframe name="hidden_iframe" style="display:none"></iframe>
+      <form class="cta" target="hidden_iframe" action="https://formsubmit.co/richard@freqenx.com" method="POST">
+        <input type="hidden" name="_subject" value="nexgroov early access" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
         <input type="email" name="email" placeholder="your@email.com" required aria-label="Email" />
         <button type="submit" aria-label="Join the list">Notify me</button>
       </form>
@@ -57,11 +62,11 @@
       <div class="grid" role="list">
         <div class="feat" role="listitem">
           <h3>Decide Faster</h3>
-          <p>One clear next move.
+          <p>One clear next move.</p>
         </div>
         <div class="feat" role="listitem">
           <h3>Quest Flow</h3>
-          <p>simple steps you can do today.
+          <p>simple steps you can do today.</p>
         </div>
         <div class="feat" role="listitem">
           <h3>Built For Real Life</h3>
@@ -81,8 +86,18 @@
   </main>
 
   <script>
-    // current year
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  // current year
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // inline thank-you without leaving the page (submits to hidden iframe)
+  const form = document.querySelector('form.cta');
+  if (form) {
+    form.addEventListener('submit', () => {
+      setTimeout(() => {
+        form.outerHTML = '<div class="badge" aria-live="polite">Thanks — you\'re on the list.</div>';
+      }, 120);
+    });
+  }
+</script>
 </body>
 </html>
