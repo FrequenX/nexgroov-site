@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>nexgroov — your next best play</title>
-  <meta name="description" content="Make your next move obvious. nexgroov helps you pick the next best play—fast." />
-  <meta property="og:title" content="nexgroov — your next best play" />
-  <meta property="og:description" content="Make your next move obvious. Join the early list." />
+  <title>neXgroov — Elite training for the loneliest job in business</title>
+  <meta name="description" content="Join a high-performing squad of solo founders with a proven performance coach. Train together, win together." />
+  <meta property="og:title" content="neXgroov — Elite training for the loneliest job in business" />
+  <meta property="og:description" content="You wouldn't train for the Olympics alone. Why optimize your daily performance solo?" />
   <meta property="og:type" content="website" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; form-action https://formsubmit.co; frame-src https://formsubmit.co; frame-ancestors 'none'; base-uri 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -15,7 +15,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="nexgroov" />
+  <meta name="apple-mobile-web-app-title" content="neXgroov" />
 <link rel="manifest" href="/site.webmanifest" />
   <style>
     :root { --bg: #0a0a0a; --fg: #f5f5f5; --muted:#a3a3a3; --card:#111; --line:#1f1f1f; --accent:#4ade80; }
@@ -27,21 +27,37 @@
     .logo{font-weight:700; font-size: clamp(42px, 6vw, 80px); line-height:1; letter-spacing:1.5px; text-align:center;}
     .logo .x{position:relative; display:inline-block; transform: scale(1.3) translateY(-2px); color:var(--accent); text-shadow:0 0 24px rgba(74,222,128,.35)}
     .tag{margin-top:14px; text-align:center; font-size: clamp(16px, 2.2vw, 22px); color:var(--muted)}
+    .synopsis{margin-top:20px; text-align:center; font-size: clamp(16px, 2.2vw, 22px); max-width:700px; margin-left:auto; margin-right:auto; line-height:1.5;}
     .cta{margin-top:26px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center}
     input[type=email]{flex:1 1 280px; max-width:520px; background:#0f0f0f; color:#fff; border:1px solid var(--line); border-radius:12px; padding:16px 16px; font-size:16px; outline:none}
     input[type=email]::placeholder{color:#6b7280}
+    select[name="challenge"] {
+      flex: 1 1 280px;
+      max-width: 520px;
+      background: #0f0f0f;
+      color: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 16px;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23a3a3a3' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      cursor: pointer;
+    }
+    select[name="challenge"] option {
+      background: #0f0f0f;
+      color: #fff;
+    }
     button{background:var(--accent); color:#052e16; font-weight:700; border:0; padding:16px 18px; border-radius:12px; cursor:pointer}
     button:disabled{opacity:.6; cursor:not-allowed}
     .mini{margin-top:10px; text-align:center; color:#6b7280; font-size:13px}
-    .grid{margin-top:34px; display:grid; gap:14px; grid-template-columns: repeat(3, minmax(0,1fr));}
-    .feat{border:1px solid var(--line); border-radius:14px; padding:16px; background:var(--card)}
-    .feat h3{margin:0 0 8px 0; font-size:16px}
-    .feat p{margin:0; color:#bdbdbd; font-size:14px}
     .foot{margin-top:28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; color:#8a8a8a; font-size:13px}
     .links a{color:#8a8a8a; text-decoration:none; margin-right:14px}
     .links a:hover{color:#cfcfcf}
     .badge{display:inline-block; font-size:12px; border:1px solid var(--line); padding:6px 10px; border-radius:999px; color:#cfcfcf; background:rgba(255,255,255,.02)}
-    @media (max-width:720px){ .grid{grid-template-columns:1fr} .foot{gap:14px; flex-direction:column; align-items:flex-start} }
+    @media (max-width:720px){ .foot{gap:14px; flex-direction:column; align-items:flex-start} }
   </style>
 </head>
 <body>
@@ -49,39 +65,32 @@
     <section class="card" aria-labelledby="brand">
       <div style="display:flex; justify-content:space-between; align-items:center;">
         <span class="badge">early access</span>
-        <span class="badge" aria-hidden>alpha</span>
+        <span class="badge" aria-hidden>beta</span>
       </div>
       <h1 id="brand" class="logo">ne<span class="x">x</span>groov</h1>
-      <p class="tag">your next best play</p>
+      <p class="tag">Elite support for the loneliest job in business</p>
+      <p class="synopsis">As a founder, you’re battling solo as coach, GM, and star player. And it's time to break free. Join a tight-knit squad of founders who get it: iron sharpening iron. Training together, conquering wins, and dodging burnout with elite coaches and peers by your side.</p>
 
-      <!-- Email capture: sends to your inbox via FormSubmit -->
-      <iframe name="hidden_iframe" style="display:none"></iframe>
-      <form class="cta" target="hidden_iframe" action="https://formsubmit.co/richard@freqenx.com" method="POST">
-        <input type="hidden" name="_subject" value="nexgroov early access" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
-        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email" />
-        <button type="submit" aria-label="Join the list">notify me</button>
-      </form>
-      <p class="mini">no spam. just launch updates.</p>
-
-      <div class="grid" role="list">
-        <div class="feat" role="listitem">
-          <h3>Decide Faster</h3>
-          <p>one clear next move.</p>
-        </div>
-        <div class="feat" role="listitem">
-          <h3>Quest Flow</h3>
-          <p>simple steps you can do today.</p>
-        </div>
-        <div class="feat" role="listitem">
-          <h3>Built For Real Life</h3>
-          <p>works with your city, your time, your vibe.</p>
-        </div>
-      </div>
+     <!-- Email capture: sends to your inbox via FormSubmit -->
+<iframe name="hidden_iframe" style="display:none"></iframe>
+<form class="cta" target="hidden_iframe" action="https://formsubmit.co/hello@nexgroov.com" method="POST">
+  <input type="hidden" name="_subject" value="neXgroov beta interest" />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+  <select name="challenge" required aria-label="Biggest daily challenge">
+    <option value="">What's your biggest daily challenge as a solo founder?</option>
+    <option value="energy">Energy/Burnout</option>
+    <option value="decisions">Too many decisions</option>
+    <option value="scale">Ready to scale/hire</option>
+    <option value="revenue">Revenue consistency</option>
+  </select>
+  <input type="email" name="email" placeholder="your@email.com" required aria-label="Email" />
+  <button type="submit" aria-label="Join the beta">Join the beta</button>
+</form>
+      <p class="mini">no spam. just beta updates.</p>
 
       <footer class="foot">
-        <div>© <span id="y"></span> nexgroov</div>
+        <div>© <span id="y"></span> neXgroov</div>
         <nav class="links" aria-label="footer">
           <a href="#" onclick="alert('Drop in your terms URL later.');return false;">Terms</a>
           <a href="#" onclick="alert('Drop in your privacy URL later.');return false;">Privacy</a>
@@ -100,10 +109,12 @@
   if (form) {
     form.addEventListener('submit', () => {
       setTimeout(() => {
-        form.outerHTML = '<div class="badge" aria-live="polite">Thanks — you\'re on the list.</div>';
+        form.outerHTML = '<div class="badge" aria-live="polite">Thanks — you\'re on the beta list.</div>';
       }, 120);
     });
   }
 </script>
+</body>
+</html>
 </body>
 </html>
